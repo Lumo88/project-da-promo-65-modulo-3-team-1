@@ -2,6 +2,11 @@
 
 Este documento describe las columnas contenidas en el archivo `hr.csv`, utilizado para el análisis de recursos humanos y predicción de rotación de personal (attrition).
 
+ # Sobre la Empresa
+| ABC Corporation, fundada en 1980 en California, es una consultora tecnológica especializada en ofrecer soluciones de inteligencia artificial (IA) y aprendizaje automático (machine learning) a empresas de diversos sectores. Su enfoque principal radica en automatizar y optimizar procesos empresariales mediante tecnologías de vanguardia.
+
+La empresa se distingue por tener un equipo multidisciplinario que abarca expertos en UX/UI, marketing, analistas, científicos de datos y otros campos relevantes. Esta diversidad permite una sinergia única entre conocimientos técnicos especializados y perspectivas variadas, lo que les permite ofrecer soluciones personalizadas adaptadas a las necesidades individuales de cada cliente. |
+
 | Columna | Descripción |
 | :--- | :--- |
 | **Age** | Edad del empleado. |
@@ -39,3 +44,10 @@ Este documento describe las columnas contenidas en el archivo `hr.csv`, utilizad
 | **YearsInCurrentRole** | Años que lleva desempeñando su rol actual. |
 | **YearsSinceLastPromotion** | Años transcurridos desde su último ascenso. |
 | **YearsWithCurrManager** | Años que lleva trabajando bajo la supervisión del gerente actual. |
+
+ # Proximos pasos 
+ | Candidatas a eliminar: **EmployeeCount**, **Over18** | Tienen un unico dato | 
+ | Modificar los datos para hacerlos mas legibles |
+ | Revisar el tipo de dato: **Age** float | **JobSatisfaction** float | **MonthlyIncome** float |  **StandardHours** float |      **TrainingTimesLastYear** float | **YearsWithCurrManager** float | (datos que tienen nulos y por eso son float)
+ |
+ |
