@@ -46,8 +46,8 @@ La empresa se distingue por tener un equipo multidisciplinario que abarca expert
 | **YearsWithCurrManager** | Años que lleva trabajando bajo la supervisión del gerente actual. |
 
  # Proximos pasos 
- | Candidatas a eliminar: **EmployeeCount**, **Over18** | Tienen un unico dato | 
+ | Candidatas a eliminar: **EmployeeCount**, **Over18** | Tienen un unico dato |   HECHO
  | Modificar los datos para hacerlos mas legibles |
  | Revisar el tipo de dato: **Age** float | **JobSatisfaction** float | **MonthlyIncome** float |  **StandardHours** float |      **TrainingTimesLastYear** float | **YearsWithCurrManager** float | (datos que tienen nulos y por eso son float)
- |
- |
+ |**DailyRate**	**HourlyRate** **MonthlyRate** cargarnos esas columnas | Los datos no estan actualizados | HECHO
+ |**MaritalStatus** error en un valor "Marreid" 
