@@ -50,4 +50,32 @@ La empresa se distingue por tener un equipo multidisciplinario que abarca expert
  | Modificar los datos para hacerlos mas legibles |
  | Revisar el tipo de dato: **Age** float | **JobSatisfaction** float | **MonthlyIncome** float |  **StandardHours** float |      **TrainingTimesLastYear** float | **YearsWithCurrManager** float | (datos que tienen nulos y por eso son float)
  |**DailyRate**	**HourlyRate** **MonthlyRate** cargarnos esas columnas | Los datos no estan actualizados | HECHO
- |**MaritalStatus** error en un valor "Marreid" 
+ |**MaritalStatus** error en un valor "Marreid"  HECHO
+ |**StandardHours** borramos columna porque no nos da ninguna información.
+
+
+ # COLUMNAS CON NULOS A REVISAR
+ | Columna | % Nulos |
+| :--- | :--- |
+| Age                          | 5.0 | 
+|  BusinessTravel              | 8.0 | 
+|  Department                  | 2.0 | 
+|  EducationField              | 4.0 | 
+|  JobSatisfaction             | 2.0 |
+|  MaritalStatus               | 9.0 |
+|  MonthlyIncome               | 1.0 |
+|  OverTime                    | 3.0 |
+|  YearsWithCurrManager        | 10.0|
+
+| Columna | Nº Nulos |
+| :--- | :--- |
+| Age                         |  73 | 
+| BusinessTravel              | 117 | 
+| Department                  | 29  | 
+| EducationField              | 58  | 
+| JobSatisfaction             | 29  | 
+| MaritalStatus               | 132 | 
+| MonthlyIncome               | 14  | 
+| OverTime                    | 44  | 
+| TrainingTimesLastYear       | 88  | 
+| YearsWithCurrManager        | 148 | 
