@@ -79,3 +79,17 @@ La empresa se distingue por tener un equipo multidisciplinario que abarca expert
 | OverTime                    | 44  | 
 | TrainingTimesLastYear       | 88  | 
 | YearsWithCurrManager        | 148 | 
+
+
+# GESTIÓN NULOS REALIZADOS
+- YearsWithCurrManager -> Lo hemos rellenado con la Mediana ya que nos daba los años enteros y respeta los valores estadísticos iniciales.
+- MaritalStatus --> Tenemos casi un 9%, la moda es Casado pero tiene la diferencia igual con Single, después de sacar gráficas, no hay patrones claros, lo categorizamos como "desconocidos"
+- BusinessTravel --> Con un bloxpot, vemos que los valores nulos tienen un patrón más parecido a los que viajan respecto con el salario, siendo los que viajan, salarios altos.
+                    Hemos visto que no afecta el balance trabajo-vida por tener datos muy dispersos, no hay patron.
+                    Ya que hemos profundizado, nos informa el cliente que los nulos son los que no viajan.
+
+- 
+
+## Pendiente de hacer:
+- borrar columna YearsWithCurrManager original y la creada de la media y quedarnos con la de la mediana.
+
