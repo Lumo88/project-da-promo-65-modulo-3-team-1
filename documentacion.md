@@ -66,7 +66,7 @@ La empresa se distingue por tener un equipo multidisciplinario que abarca expert
 |  MonthlyIncome               | 1.0 |
 |  OverTime                    | 3.0 |
 |  YearsWithCurrManager        | 10.0| 🆗
-| TrainingTimesLastYear        | 6.0 |
+| TrainingTimesLastYear        | 6.0 | 🆗
 
 | Columna | Nº Nulos |
 | :--- | :--- |
@@ -91,6 +91,7 @@ La empresa se distingue por tener un equipo multidisciplinario que abarca expert
 
 - EducationField --> Tras varios análisis, el porcentaje es muy bajo, no hay patrones y no influye en nuestra meta sobre la rotación, lo metemos en Others.
 - TrainingTimesLastYear --> Tras analizarlo, no tenemos confirmación del cliente, interpretamos que los nulos son los valores de las personas que no ha tenido ningún tipo de formación, el sistema ha puesto nulo al no haberse hecho ningún curso.
+
 - Age - años en la empresa scatterplot.
 
 # GESTIONES REALIZADAS
@@ -98,3 +99,6 @@ La empresa se distingue por tener un equipo multidisciplinario que abarca expert
 
 ## Pendiente de hacer:
 
+# insights vistos
+
+- Al ver la Edad con los años en la empresa,vamos que a partir de los 10 años de permanencia en la empresa, se empieza a perder talento, a partir de los 35 años.
