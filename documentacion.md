@@ -57,15 +57,16 @@ La empresa se distingue por tener un equipo multidisciplinario que abarca expert
  # COLUMNAS CON NULOS A REVISAR
  | Columna | % Nulos |
 | :--- | :--- |
-| Age                          | 5.0 | 
-|  BusinessTravel              | 8.0 | 
+|  Age                         | 5.0 | 
+|  BusinessTravel              | 8.0 | 🆗
 |  Department                  | 2.0 | 
-|  EducationField              | 4.0 | 
+|  EducationField              | 4.0 | 🆗
 |  JobSatisfaction             | 2.0 |
-|  MaritalStatus               | 9.0 |
+|  MaritalStatus               | 9.0 | 🆗
 |  MonthlyIncome               | 1.0 |
 |  OverTime                    | 3.0 |
-|  YearsWithCurrManager        | 10.0|
+|  YearsWithCurrManager        | 10.0| 🆗
+| TrainingTimesLastYear        | 6.0 |
 
 | Columna | Nº Nulos |
 | :--- | :--- |
@@ -88,8 +89,12 @@ La empresa se distingue por tener un equipo multidisciplinario que abarca expert
                     Hemos visto que no afecta el balance trabajo-vida por tener datos muy dispersos, no hay patron.
                     Ya que hemos profundizado, nos informa el cliente que los nulos son los que no viajan.
 
-- 
+- EducationField --> Tras varios análisis, el porcentaje es muy bajo, no hay patrones y no influye en nuestra meta sobre la rotación, lo metemos en Others.
+- TrainingTimesLastYear --> Tras analizarlo, no tenemos confirmación del cliente, interpretamos que los nulos son los valores de las personas que no ha tenido ningún tipo de formación, el sistema ha puesto nulo al no haberse hecho ningún curso.
+- Age - años en la empresa scatterplot.
+
+# GESTIONES REALIZADAS
+- Borramos columna YearsWithCurrManager original y la creada de la media y quedarnos con la de la mediana en su lugar para el análisis.
 
 ## Pendiente de hacer:
-- borrar columna YearsWithCurrManager original y la creada de la media y quedarnos con la de la mediana.
 
