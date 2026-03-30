@@ -57,14 +57,14 @@ La empresa se distingue por tener un equipo multidisciplinario que abarca expert
  # COLUMNAS CON NULOS A REVISAR
  | Columna | % Nulos |
 | :--- | :--- |
-|  Age                         | 5.0 | 
+|  Age                         | 5.0 | 🆗
 |  BusinessTravel              | 8.0 | 🆗
-|  Department                  | 2.0 | 
+|  Department                  | 2.0 | 🆗
 |  EducationField              | 4.0 | 🆗
-|  JobSatisfaction             | 2.0 |
+|  JobSatisfaction             | 2.0 | 🆗
 |  MaritalStatus               | 9.0 | 🆗
-|  MonthlyIncome               | 1.0 |
-|  OverTime                    | 3.0 |
+|  MonthlyIncome               | 1.0 | 🆗
+|  OverTime                    | 3.0 | 🆗
 |  YearsWithCurrManager        | 10.0| 🆗
 | TrainingTimesLastYear        | 6.0 | 🆗
 
@@ -92,13 +92,134 @@ La empresa se distingue por tener un equipo multidisciplinario que abarca expert
 - EducationField --> Tras varios análisis, el porcentaje es muy bajo, no hay patrones y no influye en nuestra meta sobre la rotación, lo metemos en Others.
 - TrainingTimesLastYear --> Tras analizarlo, no tenemos confirmación del cliente, interpretamos que los nulos son los valores de las personas que no ha tenido ningún tipo de formación, el sistema ha puesto nulo al no haberse hecho ningún curso.
 
-- Age - años en la empresa scatterplot.
+- Age - Hemos realizado un knnImputer con el saladio y los años de la empresa para sustituir los nulos.
+- OverTime -> Los nulos los interpretamos como si no hubieran hecho horas extras.
+- Department -> Los nulos los ponemos como desconocidos.
+- JobSatisfaction --> Rellenamos con knnimputer usando las otras dos de satisfacción (RelationshipSatisfaction, EnvironmentSatisfaction)
+- MonthlyIncome --> Rellenamos con knnimputer usando JobLevel, Education.
+
 
 # GESTIONES REALIZADAS
 - Borramos columna YearsWithCurrManager original y la creada de la media y quedarnos con la de la mediana en su lugar para el análisis.
+- Borramos columna Age inicial por la de creada con la del Knn, cambiandole el nombre de nuevo por la de Age.
 
-## Pendiente de hacer:
+# Cambios tipo de variables:
+
+TrainingTimesLastYear, Age,  JobSatisfaction -> está como float y lo cambiamos a int.
+
+# Columnas definitivas
+| Columna | Descripción |
+| :--- | :--- |
+| **Age** | Edad del empleado. |
+| **Attrition** | Indica si el empleado dejó la empresa (Yes/No). |
+| **BusinessTravel** | Frecuencia de viajes de negocios (Travel_Rarely, Travel_Frequently, Non-Travel). |
+| **Department** | Departamento al que pertenece el empleado (Sales, Research & Development, Human Resources). |
+| **DistanceFromHome** | Distancia entre el hogar y el lugar de trabajo. |
+| **Education** | Nivel de educación (1: 'Below College', 2: 'College', 3: 'Bachelor', 4: 'Master', 5: 'Doctor'). |
+| **EducationField** | Campo de estudio de su formación académica. |
+| **EmployeeNumber** | Identificador único para cada empleado. |
+| **EnvironmentSatisfaction** | Nivel de satisfacción con el entorno de trabajo (1: 'Low', 2: 'Medium', 3: 'High', 4: 'Very High'). |
+| **Gender** | Género del empleado (Female, Male). |
+| **JobInvolvement** | Nivel de involucramiento en el trabajo (1: 'Low', 2: 'Medium', 3: 'High', 4: 'Very High'). |
+| **JobLevel** | Nivel jerárquico del puesto (1 a 5). |
+| **JobRole** | Título o rol del puesto de trabajo. |
+| **JobSatisfaction** | Nivel de satisfacción con el trabajo (1: 'Low', 2: 'Medium', 3: 'High', 4: 'Very High'). |
+| **MaritalStatus** | Estado civil (Single, Married, Divorced). |
+| **MonthlyIncome** | Ingreso mensual bruto. |
+| **NumCompaniesWorked** | Número de empresas en las que ha trabajado anteriormente. |
+| **OverTime** | Indica si el empleado trabaja horas extras (Yes/No). |
+| **PercentSalaryHike** | Porcentaje de incremento salarial en el último año. |
+| **PerformanceRating** | Calificación de desempeño (1: 'Low', 2: 'Good', 3: 'Excellent', 4: 'Outstanding'). |
+| **RelationshipSatisfaction** | Satisfacción en sus relaciones laborales (1: 'Low', 2: 'Medium', 3: 'High', 4: 'Very High'). |
+| **StockOptionLevel** | Nivel de opciones sobre acciones otorgadas. |
+| **TotalWorkingYears** | Total de años de experiencia laboral. |
+| **TrainingTimesLastYear** | Número de capacitaciones realizadas el año pasado. |
+| **WorkLifeBalance** | Equilibrio entre vida laboral y personal (1: 'Bad', 2: 'Good', 3: 'Better', 4: 'Best'). |
+| **YearsAtCompany** | Años que lleva trabajando en la empresa actual. |
+| **YearsInCurrentRole** | Años que lleva desempeñando su rol actual. |
+| **YearsSinceLastPromotion** | Años transcurridos desde su último ascenso. |
+| **YearsWithCurrManager** | Años que lleva trabajando bajo la supervisión del gerente actual. |
+
+
+## Preguntas Objetivo:
+
+- ¿Quién se va de la empresa?
+- ¿Porqué se van de la empresa?
+- ¿Qué características (patrones)tienen los que se van?
+
+# Preguntas a contestar:
+
+- ¿Quiénes se van más? -> Ver en que departamentos o roles se concentran más salidas
+- ¿Las horas extras influyen en la rotación?
+- ¿Los empleados con menor environment_satisfaction se van más?
+- ¿Qué áreas tienen menor satisfacción?
+
+
+1. Análisis de Rotación (Attrition)
+  El objetivo es entender por qué la gente se va (attrition == 'yes').
+
+   * ¿Existe una brecha salarial entre los empleados que se quedan y los que se van?
+       * Herramienta: sns.boxplot(x='attrition', y='monthly_income', data=df)
+   * ¿El trabajo extra (Overtime) es un detonante para la rotación?
+       * Herramienta: sns.countplot(x='over_time', hue='attrition', data=df)
+   * ¿Influye la distancia al hogar en la decisión de abandonar la empresa?
+       * Herramienta: sns.kdeplot comparando distance_from_home para ambos grupos de attrition.
+   * ¿Qué departamentos o roles tienen la tasa de rotación más alta?
+       * Herramienta: Gráfico de barras apiladas o sns.countplot con job_role o department.
+
+  2. Análisis de Satisfacción y Clima
+  Se centra en las métricas de bienestar (job_satisfaction, environment_satisfaction, work_life_balance).
+
+   * ¿Cómo se distribuye la satisfacción laboral según el nivel del puesto (job_level)?
+       * Herramienta: sns.violinplot(x='job_level', y='job_satisfaction', data=df)
+   * ¿Existe relación entre el equilibrio vida-trabajo y la satisfacción en el entorno?
+       * Herramienta: Matriz de contingencia (Heatmap) entre work_life_balance y environment_satisfaction.
+   * ¿Los empleados con más años bajo el mismo manager tienen mayor satisfacción?
+       * Herramienta: sns.lineplot o sns.barplot comparando years_with_curr_manager con job_satisfaction.
+
+  3. Correlaciones y Factores Numéricos
+  Para identificar qué variables se mueven juntas.
+
+   * ¿Cuáles son las variables numéricas que más influyen en el ingreso mensual?
+       * Herramienta: Mapa de calor de correlaciones (sns.heatmap(df.corr())) filtrando por monthly_income.
+   * ¿Existe una correlación entre el porcentaje de aumento salarial (percent_salary_hike) y el desempeño (performance_rating)?
+       * Herramienta: sns.scatterplot con regresión.
+   * ¿Cómo afecta la edad y los años de experiencia al nivel de ingresos?
+       * Herramienta: sns.jointplot para ver la distribución y la relación entre age y total_working_years.
+
+  4. Estabilidad y Crecimiento
+   * ¿Cuánto tiempo pasa desde la última promoción antes de que un empleado decida irse?
+       * Herramienta: sns.boxenplot(x='attrition', y='years_since_last_promotion', data=df)
+   * ¿Los empleados que han trabajado en muchas empresas (num_companies_worked) tienen mayor tendencia a la rotación?
+       * Herramienta: Gráfico de barras de la media de attrition por número de empresas.
+
+  Herramientas clave para tu análisis:
+   1. Correlaciones: Usa df.corr(numeric_only=True) para identificar relaciones fuertes antes de graficar.
+   2. Segmentación: Utiliza el parámetro hue='attrition' en casi todos tus gráficos de Seaborn para ver el contraste inmediato.
+   3. Matplotlib: Úsalo para personalizar títulos, etiquetas y el tamaño de los gráficos (plt.figure(figsize=(10,6))).
+
+- YearsAtCompany y YearsInCurrentRole: Es probable que estos dos valores estén relacionados entre sí, ya que ambos indican el tiempo que ha trabajado en la empresa actual.
+
+- JobLevel y JobSatisfaction: Un aumento en el nivel jerárquico (JobLevel) podría estar asociado con una mayor satisfacción laboral (JobSatisfaction).
+
+- PerformanceRating y StockOptionLevel: Una mejor calificación de desempeño (PerformanceRating) podría estar relacionada con un aumento en las opciones sobre acciones otorgadas (StockOptionLevel), ya que se supone que los empleados con mejor desempeño merecen más beneficios.
+
+- DistanceFromHome y WorkLifeBalance: Un mayor tiempo de viaje para negocios o una ubicación lejos del hogar podría afectar negativamente la equilibrio entre vida laboral y personal (WorkLifeBalance).
+
+- MonthlyIncome y YearsAtCompany: A medida que el empleado permanece más tiempo en la empresa, es probable que su ingreso mensual aumente.
+
+- YearsWithCurrManager y PerformanceRating: El tiempo trabajando bajo la supervisión del gerente actual podría estar relacionado con una mayor calificación de desempeño (PerformanceRating), ya que se supone que el gerente ayuda a desarrollar al empleado.
+
+- Education y JobLevel: Un nivel más alto de educación podría estar asociado con un nivel jerárquico más alto en la empresa, ya que las habilidades académicas son importantes para el desempeño profesional.
+
+- OverTime y PerformanceRating: El trabajo de horas extras (OverTime) podría afectar negativamente la calificación de desempeño (PerformanceRating), ya que puede indicar una sobrecarga de trabajo o una falta de equilibrio entre trabajo y vida personal.
+
+- YearsSinceLastPromotion y JobSatisfaction: El tiempo transcurrido desde el último ascenso podría estar relacionado con la satisfacción laboral, ya que un empleado que no ha recibido un ascenso en algún tiempo puede sentirse insatisfecho.
+
+- TrainingTimesLastYear y YearsSinceLastPromotion: El número de capacitaciones realizadas el año pasado podría estar relacionado con el tiempo transcurrido desde el último ascenso, ya que el empleado puede haber estado recibiendo oportunidades de desarrollo profesional para avanzar en su carrera.
 
 # insights vistos
 
 - Al ver la Edad con los años en la empresa,vamos que a partir de los 10 años de permanencia en la empresa, se empieza a perder talento, a partir de los 35 años.
+- Las horas extras no son causa de la rotación de personal. (Gráfico sns.countplot(x='over_time', hue='attrition', data=df_hr))
+- 
