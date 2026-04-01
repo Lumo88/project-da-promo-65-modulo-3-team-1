@@ -218,8 +218,34 @@ TrainingTimesLastYear, Age,  JobSatisfaction -> está como float y lo cambiamos 
 
 - TrainingTimesLastYear y YearsSinceLastPromotion: El número de capacitaciones realizadas el año pasado podría estar relacionado con el tiempo transcurrido desde el último ascenso, ya que el empleado puede haber estado recibiendo oportunidades de desarrollo profesional para avanzar en su carrera.
 
-# insights vistos
+# Insights vistos
+
+- Existe una brecha salarial entre los empleados que se quedan y los que se van, los que se quedan, el salario minimo que perciben es la media del salario de los que se van. Los que se van son los que perciben menos salario anual (monthly_income). Los que se quedan, percibeb más. 
+    (Gráfico sns.boxplot(data=df_hr,x="attrition", y="monthly_income");)
+    Los que permanecen tienen salarios variados y los que se marchan, tienen salarios concentrados bajos.
 
 - Al ver la Edad con los años en la empresa,vamos que a partir de los 10 años de permanencia en la empresa, se empieza a perder talento, a partir de los 35 años.
-- Las horas extras no son causa de la rotación de personal. (Gráfico sns.countplot(x='over_time', hue='attrition', data=df_hr))
-- 
+
+- Las horas extras no son causa de la rotación de personal. (Gráfico sns.countplot(x='over_time', hue='attrition', data=df_hr)) un 19% de los que se han ido no echan horas extras, mientras que un 8% sí PERO el 80% de los que no se van, no lo echan.
+
+- De los que se han ido sin echar horas extras, cuánto tiempo llevan trabajando o salario, satisfacciones..
+        - Media de la gente que se va, de la gente que se queda.
+
+- el 40% de los que se van viven a más de 10 millas.
+- el 70% de las personas que se van tienen un salario bajo.
+- No hay patrón claro del porcentaje de rotación por departamento, pero podemos indicar que el 53% de los que se van pertenecen a development, un 37% en ventas.
+    Ventas (Sales) es el punto crítico:
+        En el grupo de los que se quedan (no), representan el 28%.
+        En el grupo de los que se van (yes), suben al 37%.
+        Conclusión: El departamento de Ventas tiene una rotación proporcionalmente más alta que su peso en la empresa.
+
+    Investigación y Desarrollo (R&D):
+        Son la mayoría de la empresa. Representan el 66% de los que se quedan, pero "solo" el 53% de los que se van.
+        Conclusión: Es un departamento más estable comparado con Ventas.
+
+
+- 26% labotatory technician, 20% research scientist, 24% sales executive
+
+Groupby attrition.
+Transformar el Yes/No por 1/0, hacer un mapeo.
+intervalos distancias 

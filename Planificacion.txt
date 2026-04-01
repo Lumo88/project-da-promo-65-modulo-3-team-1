@@ -11,7 +11,10 @@
 31/03/2026 - 11:30 - 14:00
 01/04/2026 - 13:30 - 14:00 SEGUNDO SPRINT REVIEW
 	- COMPLETAR FASE 2 Y FASE 3.
+07/04/2026 - 08:30 - 14:00 Entrevista técnica, podemos aprovechar la mañana.
+08/04/2026 - 08:30 - 14:00 Entrevista técnica, podemos aprovechar la mañana.
 09/04/2026 - 09:30 - 14:00 PRESENTACIÓN DEMO.
+
 
 
 PRIMER SPRINT REVIEW 24/03/2026
