@@ -220,7 +220,7 @@ TrainingTimesLastYear, Age,  JobSatisfaction -> está como float y lo cambiamos 
 
 # Insights vistos
 
-- Existe una brecha salarial entre los empleados que se quedan y los que se van, los que se quedan, el salario minimo que perciben es la media del salario de los que se van. Los que se van son los que perciben menos salario anual (monthly_income). Los que se quedan, percibeb más. 
+- Existe una brecha salarial entre los empleados que se quedan y los que se van, los que se quedan, el salario minimo que perciben es la mediana del salario de los que se van. Los que se van son los que perciben menos salario anual (monthly_income). Los que se quedan, perciben más. 
     (Gráfico sns.boxplot(data=df_hr,x="attrition", y="monthly_income");)
     Los que permanecen tienen salarios variados y los que se marchan, tienen salarios concentrados bajos.
 
