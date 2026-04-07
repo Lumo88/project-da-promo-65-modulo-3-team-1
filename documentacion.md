@@ -181,9 +181,6 @@ TrainingTimesLastYear, Age,  JobSatisfaction -> está como float y lo cambiamos 
 
 - Las horas extras no son causa de la rotación de personal. (Gráfico sns.countplot(x='over_time', hue='attrition', data=df_hr)) un 19% de los que se han ido no echan horas extras, mientras que un 8% sí PERO el 80% de los que no se van, no lo echan.
 
-- De los que se han ido sin echar horas extras, cuánto tiempo llevan trabajando o salario, satisfacciones..
-        - Media de la gente que se va, de la gente que se queda.
-
 - el 40% de los que se van viven a más de 10 millas.
 - el 70% de las personas que se van tienen un salario bajo.
 - No hay patrón claro del porcentaje de rotación por departamento, pero podemos indicar que el 53% de los que se van pertenecen a development, un 37% en ventas.
