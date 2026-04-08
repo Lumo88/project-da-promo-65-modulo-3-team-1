@@ -35,7 +35,6 @@ Uno de los puntos fuertes de este proyecto es el tratamiento riguroso de la cali
 
 * **💰 El Factor Salarial:** El **70% de las fugas** de talento se concentran en el rango salarial inferior a **5k**.
 * **🤝 Crisis de Liderazgo:** Se detectó un desplome masivo en la satisfacción laboral al cumplir **5 años** bajo el mismo supervisor.
-* **📍 Geografía:** El 40% de los empleados que renuncian viven a más de **10 millas** del centro de trabajo.
 * **⚠️ Departamentos Críticos:** El área de **Ventas (Sales)** presenta una rotación del 37%, muy superior a su peso proporcional en la empresa.
 
 ## 💡 Conclusiones y Recomendaciones
