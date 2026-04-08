@@ -109,7 +109,7 @@ Se ha realizado un análisis exhaustivo de cada columna con valores faltantes pa
 | **YearsWithCurrManager** | Años que lleva trabajando bajo la supervisión del gerente actual. |
 
 
-## 4. Insights Estratégicos y Hallazgos Clave
+## 4. Insights Estratégicos y Hallazgos Claves
 
 ### **💰 Salario: El Principal Motor de Fuga**
 * **El Umbral Crítico:** El **70% de las renuncias** ocurren en el rango de **salario bajo (0 - 5k)**. 
