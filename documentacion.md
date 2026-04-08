@@ -233,6 +233,6 @@ Si miramos el gráfico, vemos que la empresa está usando dos estrategias distin
         Si miras el grupo yes (los que se van), muchos tienen aumentos bajos (11-15%) y llevan más de 3 años sin ascenso.
         Conclusión: Si no tienes presupuesto para un aumento del 25%, promoverlos es la opción más lógica. Al moverlos de puesto, sus "años desde la última promoción" volverían a 0, y como vimos en los gráficos de densidad, la gente recién movida o nueva tiende a quedarse más tiempo mientras aprende su nuevo rol.
 
-    Veredicto de la Profe: Si quieres retención a largo plazo y salud financiera, promoverlos es mejor. Si el empleado es un "crack" que no quieres que se lleve la competencia mañana mismo y no tienes una vacante arriba, el aumento del 25% es tu única salida de emergencia.
+    Si quieres retención a largo plazo y salud financiera, promoverlos es mejor. Si el empleado es un "crack" que no quieres que se lleve la competencia mañana mismo y no tienes una vacante arriba, el aumento del 25% es tu única salida de emergencia.
 
 -- boxplot de years_since_last_promotion, attrition
