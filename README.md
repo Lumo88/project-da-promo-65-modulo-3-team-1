@@ -43,8 +43,13 @@ Uno de los puntos fuertes de este proyecto es el tratamiento riguroso de la cali
 3. **Planes de Carrera:** Priorizar promociones internas para perfiles con desempeño estable (Rating 3) que llevan más de 2 años sin cambios de rol.
 
 ## 📂 Estructura del Repositorio
-* `files/`: Contiene el archivo `hr.csv`, y `hr_final.csv`
-* `src/`: Scripts auxiliares.
+
+- 📂 **files/** → Contiene los datasets y recursos visuales.
+- 📂 **src/** → Scripts reutilizables y funciones del proyecto.
+- 📓 **notebooks** → Análisis exploratorio y generación de insights.
+- 📄 **documentation.md** → Documentación técnica del proyecto.
+- 📄 **README.md** → Descripción general.
+
 
 
 ## 👤 Autor
