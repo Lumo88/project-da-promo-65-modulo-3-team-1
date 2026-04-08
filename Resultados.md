@@ -1,5 +1,5 @@
 # Tendencias
-- Las horas extras no son causa de la rotación de personal. (Gráfico sns.countplot(x='over_time', hue='attrition', data=df_hr)) un 19% de los que se han ido no echan horas extras, mientras que un 8% sí PERO el 80% de los que no se van, no lo echan.
+--> Las horas extras no son causa de la rotación de personal. (Gráfico sns.countplot(x='over_time', hue='attrition', data=df_hr)) un 19% de los que se han ido no echan horas extras, mientras que un 8% sí PERO el 80% de los que no se van, no lo echan.
 
 - Se observa una leve tendencia descendente en la satisfacción laboral conforme aumentan los años con el mismo supervisor, a los 5 años cae la satisfacción y vuelve a caer a los 10 años, aunque la relación no es fuerte y presenta alta variabilidad. Estabilidad Inicial (Años 0 a 4): Los empleados suelen estar bastante satisfechos. La mediana es 3 y la mayoría se mueve entre 2 y 4. Es la etapa de "luna de miel" con el manager. La crisis de los 5 años: ¡Ojo aquí! Hay un desplome masivo en la satisfacción. La mediana cae a 1.0. Esto sugiere que algo pasa cuando alguien lleva exactamente 5 años con el mismo jefe. ¿Falta de promoción? ¿Estancamiento? ¿Fatiga en la relación? Recuperación y Ciclos: Curiosamente, en los años 6, 7, 8 y 9 la satisfacción vuelve a subir. Los que sobreviven al año 5 parecen recuperar el entusiasmo, hasta que llegamos al año 10 y 14, donde vemos nuevas caídas importantes. Valores Erráticos al final (Año 15+): Verás que las cajas se vuelven raras (como en el año 16 que es solo una línea en el 1). Esto suele pasar porque hay muy pocos datos. Probablemente solo tengas una o dos personas que lleven 16 años con el mismo manager, por lo que el gráfico no puede formar una "caja" real.
 
@@ -25,8 +25,6 @@
 # Causas rotación
 
 - Existe una brecha salarial entre los empleados que se quedan y los que se van, los que se quedan, el salario minimo que perciben es la mediana del salario de los que se van. Los que se van son los que perciben menos salario anual (monthly_income). Los que se quedan, perciben más. (Gráfico sns.boxplot(data=df_hr,x="attrition", y="monthly_income");) Los que permanecen tienen salarios variados y los que se marchan, tienen salarios concentrados bajos.
-
-- el 40% de los que se van viven a más de 10 millas.
 
 - el 70% de las personas que se van tienen un salario bajo.
 
